@@ -6,6 +6,7 @@ nodes.metamaskNode = require('./nodeHelpers/metamask');
 nodes.nodeTypes = {
     ETH: "ETH",
     ETC: "ETC",
+    EVA: "EVA"
     MUS: "MUSIC",
     Ropsten: "ROPSTEN ETH",
     Kovan: "KOVAN ETH",
@@ -76,6 +77,18 @@ nodes.nodeList = {
         'abiList': require('./abiDefinitions/ethAbi.json'),
         'service': 'Giveth.io',
         'lib': new nodes.customNode('https://mew.giveth.io', '')
+    },
+    'eva_eva': {
+        'name': 'EVA',
+        'blockExplorerTX': 'http://ethereumvega.org:8000/#/tx/[[txHash]]',
+        'blockExplorerAddr': 'http://ethereumvega.org:8000/#/address/[[address]]',
+        'type': nodes.nodeTypes.EVA,
+        'eip155': true,
+        'chainId': 7,
+        'tokenList': require('./tokens/evaTokens.json'),
+        'abiList': require('./abiDefinitions/evaAbi.json'),
+        'service': 'Ethereumvega.org',
+        'lib': new nodes.customNode('https://ethereumvega.org', '')
     },
     'etc_epool': {
         'name': 'ETC',

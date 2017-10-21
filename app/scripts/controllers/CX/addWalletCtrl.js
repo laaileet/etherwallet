@@ -45,6 +45,9 @@ var addWalletCtrl = function($scope, $sce) {
                 case nodes.nodeTypes.MUS:
                     $scope.HDWallet.dPath = $scope.HDWallet.ledgerMusicPath;
                     break;
+                case nodes.nodeTypes.EVA:
+                    $scope.HDWallet.dPath = $scope.HDWallet.ledgerVegaPath;
+                    break;
                 default:
                     $scope.HDWallet.dPath = $scope.HDWallet.ledgerPath;
             }
@@ -58,6 +61,9 @@ var addWalletCtrl = function($scope, $sce) {
                     break;
                 case nodes.nodeTypes.MUS:
                     $scope.HDWallet.dPath = $scope.HDWallet.trezorMusicPath;
+                    break;
+                case nodes.nodeTypes.EVA:
+                    $scope.HDWallet.dPath = $scope.HDWallet.trezorVegaPath;
                     break;
                 case nodes.nodeTypes.Ropsten:
                     $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
